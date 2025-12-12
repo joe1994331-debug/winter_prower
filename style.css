@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;600;700&display=swap');
+
+:root {
+    --bg-color: #0F282F; /* 深藍綠色 */
+    --text-main: #E0E0E0; /* 柔和白 */
+    --accent-gold: #D4AF37; /* 香檳金 */
+    --accent-light: #Fdfbf7; /* 奶油白 */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(212, 175, 55, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.7;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(21, 68, 79, 0.4) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 30%);
+}
+
+.poster-container {
+    width: 100%;
+    max-width: 480px;
+    background: rgba(15, 40, 47, 0.98);
+    padding: 40px 24px 60px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    position: relative;
+    overflow: hidden;
+    border-top: 5px solid var(--accent-gold);
+    border-bottom: 5px solid var(--accent-gold);
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* 內容層級 */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+/* 標題區 */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.top-tag {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+    opacity: 0.8;
+}
+
+h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--accent-light);
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    line-height: 1.3;
+}
+
+.subtitle {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1rem;
+    color: #aabdc1;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* 視覺圖片區塊 (已更新為圖片模式) */
+.visual-art {
+    width: 100%;
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.visual-image {
+    max-width: 80%;
+    max-height: 250px;
+    height: auto;
+    border-radius: 50%; /* 讓圖片呈現圓形，若想要原圖形狀可刪除此行 */
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); /* 金色光暈 */
+    opacity: 0.95;
+    object-fit: cover;
+}
+
+/* 文案區 */
+.intro-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #cfd8dc;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.intro-text p {
+    margin-bottom: 10px;
+}
+
+.highlight-gold {
+    color: var(--accent-gold);
+    font-weight: 500;
+}
+
+/* 資訊卡片區 */
+.info-card {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 40px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.1);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.price-section {
+    text-align: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.promo-tag {
+    font-size: 0.85rem;
+    color: #4caf50;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.price-box {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #78909c;
+    font-size: 0.9rem;
+}
+
+.final-price {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.8rem;
+    color: var(--accent-light);
+    font-weight: 700;
+}
+
+/* 流程時間軸 */
+.schedule-section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--accent-gold);
+    margin: 8px auto 0;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 20px;
+    border-left: 1px solid rgba(212, 175, 55, 0.2);
+    margin-left: 10px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 35px;
+    padding-left: 25px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -25px;
+    top: 6px;
+    width: 9px;
+    height: 9px;
+    background: var(--bg-color);
+    border: 2px solid var(--accent-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--accent-gold);
+}
+
+.time {
+    font-family: 'Noto Serif TC', serif;
+    color: var(--accent-gold);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.activity-title {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--accent-light);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.desc {
+    font-size: 0.9rem;
+    color: #b0bec5;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* 底部四宮格特色 */
+.grid-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.grid-item {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px 10px;
+    text-align: center;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.grid-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.grid-icon {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.grid-text {
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+/* 底部按鈕區 */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    position: sticky;
+    bottom: 20px;
+    z-index: 10;
+}
+
+.cta-btn {
+    display: block;
+    background: #E3C465;
+    color: #0F282F;
+    padding: 16px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(227, 196, 101, 0.3);
+    transition: transform 0.2s;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.cta-btn:hover {
+    transform: scale(1.02);
+    background: #deb643;
+}
+
+/* 底部提示小字 */
+.footer-note {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
